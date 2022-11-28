@@ -1,20 +1,27 @@
 import java.util.ArrayList;
-import java.util.OptionalDouble;
 
 public class Student {
     private String name;
     private int age;
+
+    private int year;
     private ArrayList<Integer> grades;
     private double gradeAvg;
 
-    public Student(String name, int age) {
+    public Student() {
+        this("N/A", -1, -1);
+    }
+
+    public Student(String name, int age, int year) {
         this.name = name;
         this.age = age;
+        this.year = year;
         this.grades = new ArrayList<>();
     }
-    public Student(String name, int age, int grade) {
+    public Student(String name, int age, int year, int grade) {
         this.name = name;
         this.age = age;
+        this.year = year;
         this.grades = new ArrayList<>();
         this.addStudentGrade(grade);
     }
@@ -24,6 +31,9 @@ public class Student {
     }
     public void setStudentAge(int age){
         this.age = age;
+    }
+    public void setStudentYear(int year) {
+        this.year = year;
     }
 
     public void addStudentGrade(int grade){
@@ -41,10 +51,13 @@ public class Student {
     public int getAge() {
         return this.age;
     }
+
+    public int getYear() {
+        return this.year;
+    }
     public ArrayList<Integer> getGrades() {
         return this.grades;
     }
-
     public double getGradeAverage() {
         return this.gradeAvg;
     }
