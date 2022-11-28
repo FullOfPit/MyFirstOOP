@@ -8,7 +8,7 @@ import java.util.stream.IntStream;
 public class Student {
     private String name;
     private int age;
-    private int year;
+    private int ID;
     private final ArrayList<Integer> grades;
     private double gradeAvg;
 
@@ -16,16 +16,16 @@ public class Student {
         this("N/A", -1, -1);
     }
 
-    public Student(String name, int age, int year) {
+    public Student(String name, int age, int ID) {
         this.name = name;
         this.age = age;
-        this.year = year;
+        this.ID = ID;
         this.grades = new ArrayList<>();
     }
-    public Student(String name, int age, int year, int grade) {
+    public Student(String name, int age, int ID, int grade) {
         this.name = name;
         this.age = age;
-        this.year = year;
+        this.ID = ID;
         this.grades = new ArrayList<>();
         this.addStudentGrade(grade);
     }
@@ -36,8 +36,8 @@ public class Student {
     public void setStudentAge(int age){
         this.age = age;
     }
-    public void setStudentYear(int year) {
-        this.year = year;
+    public void setStudentID(int ID) {
+        this.ID = ID;
     }
 
     public void addStudentGrade(int grade){
@@ -63,8 +63,8 @@ public class Student {
     public int getAge() {
         return this.age;
     }
-    public int getYear() {
-        return this.year;
+    public int getID() {
+        return this.ID;
     }
     public ArrayList<Integer> getGrades() {
         return this.grades;
@@ -75,7 +75,7 @@ public class Student {
 
     public String toString() {
         return "Student name: " + this.name + ", Student age: " + this.age + ", Student year: "
-                + this.year + "\nStudent grades: " + this.grades.toString();
+                + this.ID + "\nStudent grades: " + this.grades.toString();
     }
 
     @Override
@@ -83,12 +83,12 @@ public class Student {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Student student = (Student) o;
-        return getAge() == student.getAge() && getYear() == student.getYear() && Double.compare(student.getGradeAvg(), getGradeAvg()) == 0 && Objects.equals(getName(), student.getName()) && Objects.equals(getGrades(), student.getGrades());
+        return getAge() == student.getAge() && getID() == student.getID() && Double.compare(student.getGradeAvg(), getGradeAvg()) == 0 && Objects.equals(getName(), student.getName()) && Objects.equals(getGrades(), student.getGrades());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getName(), getAge(), getYear(), getGrades(), getGradeAvg());
+        return Objects.hash(getName(), getAge(), getID(), getGrades(), getGradeAvg());
     }
 
     /*
