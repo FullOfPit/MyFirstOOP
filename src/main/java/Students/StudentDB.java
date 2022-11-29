@@ -34,12 +34,22 @@ public class StudentDB {
         newArray[this.students.length + 1] = student;
         this.students = newArray;
     }
-/*
-    public Student remove(Student student) {
-        Student[] newArray = Arrays.stream(this.students).filter();
+    public void removeStudent(Student student) {
+        Student[] newArray = new Student[this.students.length - 1];
+        int studentIndex = Arrays.asList(this.students).indexOf(student);
+        for (int i = 0; i <= studentIndex; i++) {
+            newArray[i] = this.students[i];
+        }
+        for (int i = studentIndex + 1; i < this.students.length -1; i++) {
+            newArray[i] = this.students[i];
+        }
+        this.students = newArray;
+        /*
+        Student[] newArray = Arrays.stream(this.students).filter(obj -> !obj.equals(student)).toArray(new Student[this.students.length]);
+        this.students = newArray;
+         */
     }
 
 
- */
 
 }
