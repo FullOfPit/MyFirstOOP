@@ -14,8 +14,10 @@ public class Main {
         Student muslim = new Student("Muslim", 32, 273);
         Student elias = new Student("Elias" , 27, 433);
 
-        Student[] newStudentArray = new Student[]{christian, sebastian, abir, muslim, elias};
+        Student[] newStudentArray = new Student[]{christian, sebastian, abir};
         StudentDB javaBO_22_1 = new StudentDB(newStudentArray);
+        javaBO_22_1.addStudent(muslim);
+        javaBO_22_1.addStudent(elias);
 
         javaBO_22_1.removeStudent(muslim);
         int numStu = javaBO_22_1.getAllStudents().length;
