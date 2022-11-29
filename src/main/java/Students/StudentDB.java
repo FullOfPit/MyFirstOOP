@@ -36,6 +36,8 @@ public class StudentDB {
         }
         newArray[this.students.length] = student;
         this.students = newArray;
+
+        //Student[] newStudents = Arrays.copyOf(students, students.length + 1);
     }
     public Student removeStudent(Student student) {
         Student[] newArray = new Student[this.students.length - 1];
